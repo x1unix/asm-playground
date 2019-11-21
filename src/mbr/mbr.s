@@ -1,11 +1,9 @@
-MBR_MEM_OFFSET equ 0x7c00 ; BIOS MBR memory start offset
+[org 0x7c00] ; Define BIOS MBR memory start offset as global memory offset
 EOL equ 0 ; NUL terminator
 
 mov ah, 0x0e ; tty mode
-mov cx, 0 ; start loop
 
-mov bx, msg
-add bx, MBR_MEM_OFFSET ; 0x7c00
+mov bx, msg  ; Put string address to bx
 
 print:
     mov al, [bx]    ; Take value from bx address to al
@@ -17,7 +15,7 @@ print:
 jmp $ ; jump to current address = infinite loop
 
 msg:
-    db 10, 13, "!!! OMG, it works !!!", 0
+    db 10, 13, "!!! OMG, it works !!!", EOL
 
 ; padding and magic number
 times 510 - ($-$$) db 0
