@@ -17,7 +17,7 @@ print:
 jmp $ ; jump to current address = infinite loop
 
 msg:
-    db 10, 10, "!!! Oh god, it works !!!", 0
+    db 10, 10, "!!! OMG, it works !!!", 0
 
 ; padding and magic number
 times 510 - ($-$$) db 0
