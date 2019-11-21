@@ -7,4 +7,10 @@ mbr:
 	nasm -f bin ./boot/mbr/mbr.s -o $(BUILD_DIR)/mbr.bin
 
 run: mbr
-	$(QEMU) $(MBR)
+	$(QEMU) $(MBR) -s
+
+debug: mbr
+	gdb -x ./dev/debug.gdb
+
+rdr:
+	radare2 $(BUILD_DIR)/mbr.bin
