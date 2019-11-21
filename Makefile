@@ -1,10 +1,11 @@
 BUILD_DIR ?= ./build
+SRC ?= ./src
 MBR ?= $(BUILD_DIR)/mbr.bin
 QEMU ?= qemu-system-i386
 
 .PHONY:mbr
 mbr:
-	nasm -f bin ./boot/mbr/mbr.s -o $(BUILD_DIR)/mbr.bin
+	nasm -f bin $(SRC)/mbr/mbr.s -o $(BUILD_DIR)/mbr.bin
 
 run: mbr
 	$(QEMU) $(MBR) -s
