@@ -11,16 +11,10 @@ print:
     mov al, [bx]    ; Take value from bx address to al
     int 0x10        ; Print interrupt
     inc bx          ; Increate pointer to get next char
-    mov dl, [bx]
-    cmp dl, EOL
+    cmp al, EOL     ; Print next char if it's not null terminator
     jne print
 
-mov al, '!'
-int 0x10
-int 0x10
-int 0x10
-
-;jmp $ ; jump to current address = infinite loop
+jmp $ ; jump to current address = infinite loop
 
 msg:
     db 10, 10, "!!! Oh god, it works !!!", 0
