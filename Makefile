@@ -7,11 +7,14 @@ QEMU ?= qemu-system-i386
 mbr:
 	nasm -f bin $(SRC)/mbr/mbr.s -o $(BUILD_DIR)/mbr.bin
 
+.PHONY:mbr
 run: mbr
 	$(QEMU) $(MBR) -s
 
+.PHONY:mbr
 debug: mbr
 	gdb -x ./dev/debug.gdb
 
+.PHONY:mbr
 rdr:
 	radare2 $(BUILD_DIR)/mbr.bin
