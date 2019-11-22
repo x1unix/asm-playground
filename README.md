@@ -5,6 +5,7 @@ Some code to play with ASM related to [os-tutorial](https://github.com/cfenollos
 ## Docs
 
 - [GDB && Radare2 Cheatsheet](dev/cheatsheet.md)
+- [ASM Instructions wiki](https://github.com/HJLebbink/asm-dude/wiki)
 
 ## Usage
 
