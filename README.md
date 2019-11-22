@@ -4,7 +4,7 @@ Some code to play with ASM related to [os-tutorial](https://github.com/cfenollos
 
 ## Docs
 
-- [dev/cheatsheet.md](GDB && Radare2 Cheatsheet)
+- [GDB && Radare2 Cheatsheet](dev/cheatsheet.md)
 
 ## Usage
 
